@@ -1,0 +1,508 @@
+/* ==========================================================================
+   Hari Cherumany & Associates — Stylesheet
+   Type: IBM Plex Serif (headings) / IBM Plex Sans (body)
+   Palette: deep teal ledger tones + brass accent
+   ========================================================================== */
+
+:root {
+  --hca-paper: #f7f6f2;
+  --hca-mist: #eceee8;
+  --hca-ink: #16221f;
+  --hca-teal: #0e3d3b;
+  --hca-teal-light: #2f6b66;
+  --hca-brass: #a9814c;
+  --hca-brass-soft: #c9ac7c;
+  --hca-slate: #55625f;
+  --hca-line: #d8dbd4;
+  --hca-card-bg: #ffffff;
+
+  --bs-body-bg: var(--hca-paper);
+  --bs-body-color: var(--hca-ink);
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--hca-paper);
+  color: var(--hca-ink);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4, h5,
+.font-serif {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  color: var(--hca-ink);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-weight: 600; line-height: 1.12; }
+h2 { font-weight: 600; line-height: 1.2; }
+h3 { font-weight: 500; }
+
+p, li {
+  color: var(--hca-slate);
+  max-width: 62ch;
+}
+
+a { color: var(--hca-teal-light); }
+a:hover { color: var(--hca-brass); }
+
+.text-muted-slate { color: var(--hca-slate) !important; }
+
+/* -------------------------------------------------------------------- */
+/* Utility ribbon                                                        */
+/* -------------------------------------------------------------------- */
+.hca-ribbon {
+  background-color: var(--hca-teal);
+  color: #e7f1ef;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.hca-ribbon,
+.hca-ribbon a,
+.hca-ribbon span {
+  color: #e7f1ef;
+}
+.hca-ribbon a {
+  text-decoration: none;
+}
+.hca-ribbon a:hover {
+  color: var(--hca-brass-soft);
+}
+.hca-ribbon .bi {
+  font-size: 0.9rem;
+  vertical-align: -0.1em;
+}
+.hca-ribbon .hca-social a {
+  display: inline-flex;
+  margin-left: 0.65rem;
+}
+
+/* -------------------------------------------------------------------- */
+/* Navbar                                                                */
+/* -------------------------------------------------------------------- */
+.hca-navbar {
+  background-color: var(--hca-card-bg);
+  border-bottom: 1px solid var(--hca-line);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.hca-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.hca-brand img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+.hca-navbar .nav-link {
+  color: var(--hca-ink);
+  font-weight: 500;
+  font-size: 0.94rem;
+  padding-left: 0.85rem !important;
+  padding-right: 0.85rem !important;
+}
+.hca-navbar .nav-link:hover,
+.hca-navbar .nav-link:focus {
+  color: var(--hca-teal-light);
+}
+.hca-navbar .dropdown-menu {
+  border: 1px solid var(--hca-line);
+  border-radius: 6px;
+}
+
+/* -------------------------------------------------------------------- */
+/* Hero                                                                  */
+/* -------------------------------------------------------------------- */
+.hca-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--hca-paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--hca-line) 0px,
+    var(--hca-line) 1px,
+    transparent 1px,
+    transparent 34px
+  );
+  background-position: 0 120px;
+}
+.hca-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--hca-mist) 40%, transparent 90%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+.hca-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 2.75rem;
+  padding-bottom: 2.5rem;
+}
+.hca-eyebrow-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.hca-eyebrow-rule .rule {
+  width: 42px;
+  height: 2px;
+  background-color: var(--hca-brass);
+}
+.hca-eyebrow-rule span {
+  font-size: 0.8rem;
+  color: var(--hca-brass);
+}
+.hca-hero h1 {
+  font-size: clamp(2.1rem, 4.4vw, 3.35rem);
+  max-width: 16ch;
+}
+.hca-hero .lead {
+  font-size: 1.08rem;
+  max-width: 52ch;
+}
+.hca-stat-rail {
+  border-left: 2px solid var(--hca-brass);
+  padding-left: 1.4rem;
+}
+.hca-stat-rail .stat-figure {
+  font-family: "IBM Plex Serif", serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--hca-teal-light);
+  line-height: 1;
+}
+.hca-stat-rail .stat-label {
+  font-size: 0.8rem;
+  color: var(--hca-slate);
+}
+.hca-stat-rail + .hca-stat-rail {
+  margin-top: 1.1rem;
+}
+
+/* -------------------------------------------------------------------- */
+/* Section framing                                                       */
+/* -------------------------------------------------------------------- */
+.hca-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--hca-line);
+}
+.hca-section-alt {
+  background-color: var(--hca-mist);
+}
+.hca-section-head {
+  margin-bottom: 1.75rem;
+}
+.hca-section-head .hca-kicker {
+  color: var(--hca-brass);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.hca-section-head h2 {
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  max-width: 24ch;
+}
+
+/* -------------------------------------------------------------------- */
+/* Cards / panels (avoid identical rounded-card-kit look)                */
+/* -------------------------------------------------------------------- */
+.hca-panel {
+  background-color: var(--hca-card-bg);
+  border: 1px solid var(--hca-line);
+  border-left: 3px solid var(--hca-teal);
+  padding: 1.4rem 1.4rem;
+  height: 100%;
+}
+.hca-panel h3 {
+  font-size: 1.12rem;
+  margin-bottom: 0.5rem;
+}
+.hca-panel .bi {
+  font-size: 1.4rem;
+  color: var(--hca-brass);
+  margin-bottom: 0.6rem;
+}
+
+.hca-service-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--hca-line);
+}
+.hca-service-row:last-child { border-bottom: none; }
+.hca-service-row .bi {
+  font-size: 1.4rem;
+  color: var(--hca-teal-light);
+  margin-top: 0.2rem;
+}
+.hca-service-row h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+.hca-service-row a.stretched-link {
+  font-size: 0.88rem;
+}
+
+/* -------------------------------------------------------------------- */
+/* Team                                                                  */
+/* -------------------------------------------------------------------- */
+.hca-team-card {
+  background-color: var(--hca-card-bg);
+  border: 1px solid var(--hca-line);
+  text-align: center;
+  padding: 1.5rem 1.2rem;
+}
+.hca-team-avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 0.85rem;
+  border-radius: 50%;
+  background-color: var(--hca-mist);
+  border: 1px solid var(--hca-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hca-team-avatar .bi {
+  font-size: 2rem;
+  color: var(--hca-teal-light);
+}
+.hca-team-card h3 { font-size: 1.02rem; margin-bottom: 0.15rem; }
+.hca-team-role {
+  color: var(--hca-brass);
+  font-size: 0.82rem;
+  margin-bottom: 0.8rem;
+}
+
+/* -------------------------------------------------------------------- */
+/* Buttons                                                               */
+/* -------------------------------------------------------------------- */
+.btn-hca-primary {
+  background-color: var(--hca-teal);
+  border-color: var(--hca-teal);
+  color: #f6f6f2;
+  padding: 0.65rem 1.5rem;
+  font-weight: 500;
+}
+.btn-hca-primary:hover {
+  background-color: var(--hca-brass);
+  border-color: var(--hca-brass);
+  color: #16221f;
+}
+.btn-hca-outline {
+  border: 1px solid var(--hca-ink);
+  color: var(--hca-ink);
+  padding: 0.65rem 1.5rem;
+  font-weight: 500;
+  background: transparent;
+}
+.btn-hca-outline:hover {
+  border-color: var(--hca-teal);
+  background-color: var(--hca-teal);
+  color: #f6f6f2;
+}
+
+/* -------------------------------------------------------------------- */
+/* Contact section                                                       */
+/* -------------------------------------------------------------------- */
+.hca-contact-detail {
+  display: flex;
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+.hca-contact-detail .bi {
+  font-size: 1.15rem;
+  color: var(--hca-teal-light);
+  margin-top: 0.15rem;
+}
+.hca-contact-detail strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--hca-ink);
+}
+.hca-contact-detail span, .hca-contact-detail a {
+  font-size: 0.92rem;
+  color: var(--hca-slate);
+}
+.hca-map-frame {
+  border: 1px solid var(--hca-line);
+  padding: 6px;
+  background-color: var(--hca-card-bg);
+}
+.hca-map-frame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: 0;
+  filter: grayscale(0.15);
+}
+.hca-action-btns .btn {
+  font-size: 0.88rem;
+}
+.form-control, .form-select {
+  background-color: var(--hca-card-bg);
+  border: 1px solid var(--hca-line);
+  color: var(--hca-ink);
+}
+.form-control:focus {
+  border-color: var(--hca-teal-light);
+  box-shadow: 0 0 0 0.2rem rgba(14, 61, 59, 0.15);
+}
+.form-label {
+  font-size: 0.85rem;
+  color: var(--hca-slate);
+}
+
+/* -------------------------------------------------------------------- */
+/* Footer                                                                */
+/* -------------------------------------------------------------------- */
+.hca-footer {
+  background-color: var(--hca-teal);
+  color: #dfeceb;
+  padding-top: 2.5rem;
+  padding-bottom: 1.25rem;
+}
+.hca-footer h5 {
+  font-family: "IBM Plex Serif", serif;
+  color: #f4f1e8;
+  font-size: 1.02rem;
+  margin-bottom: 0.85rem;
+}
+.hca-footer a {
+  color: #b9d3d0;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+.hca-footer a:hover { color: var(--hca-brass-soft); }
+.hca-footer .hca-foot-brand {
+  color: #f4f1e8;
+  font-family: "IBM Plex Serif", serif;
+  font-size: 1.15rem;
+}
+.hca-footer hr {
+  border-color: rgba(255,255,255,0.12);
+  margin: 1.5rem 0 1rem;
+}
+.hca-footer .hca-copyright {
+  font-size: 0.82rem;
+  color: #9ec2be;
+}
+.hca-footer .hca-social a {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+/* -------------------------------------------------------------------- */
+/* Floating WhatsApp button — fixed bottom-right on ALL breakpoints      */
+/* -------------------------------------------------------------------- */
+.hca-whatsapp-fab {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 9999 !important;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  font-size: 1.7rem;
+  transition: transform 0.2s ease;
+}
+.hca-whatsapp-fab:hover {
+  transform: scale(1.06);
+  color: #ffffff;
+}
+
+/* Page banner used on the 5 standalone service pages */
+.hca-page-banner {
+  background-color: var(--hca-mist);
+  border-bottom: 1px solid var(--hca-line);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.hca-page-banner .breadcrumb {
+  font-size: 0.85rem;
+}
+.hca-page-banner h1 {
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+}
+
+.hca-inline-list li {
+  margin-bottom: 0.6rem;
+}
+.hca-inline-list .bi {
+  color: var(--hca-teal-light);
+  margin-right: 0.5rem;
+}
+
+/* Wider containers on large screens so content doesn't float with an
+   oversized side margin — halves the empty edge gap vs Bootstrap default */
+@media (min-width: 1200px) {
+  .hca-ribbon .container,
+  .hca-navbar .container,
+  .hca-hero .container,
+  .hca-section .container,
+  .hca-footer .container,
+  .hca-page-banner .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1400px) {
+  .hca-ribbon .container,
+  .hca-navbar .container,
+  .hca-hero .container,
+  .hca-section .container,
+  .hca-footer .container,
+  .hca-page-banner .container {
+    max-width: 1520px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--hca-brass);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767.98px) {
+  .hca-hero-inner { padding-top: 1.75rem; padding-bottom: 1.75rem; }
+  .hca-section { padding-top: 2.25rem; padding-bottom: 2.25rem; }
+  .hca-stat-rail { margin-top: 1rem; }
+}

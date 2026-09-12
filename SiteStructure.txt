@@ -1,0 +1,59 @@
+HARI CHERUMANY & ASSOCIATES — WEBSITE
+Directory Structure
+==============================================
+
+All six service pages now live together in /services, matching the
+production layout below. The only remaining step for a fully-organised
+build is moving css/js/images under a single /assets folder, which is
+optional and noted below.
+
+hari-cherumany-associates/
+|
+|-- index.html                     (Home / About / Contact — single page)
+|
+|-- services/
+|   |-- tax-filing.html
+|   |-- audit-assurance.html
+|   |-- gst-compliance.html
+|   |-- corporate-secretarial.html
+|   |-- bookkeeping.html
+|   |-- nri-services.html
+|
+|-- css/
+|   |-- style.css                   (custom styles — Bootstrap loaded via CDN)
+|
+|-- js/
+|   |-- script.js                   (small UI behaviours — nav collapse etc.)
+|
+|-- images/
+|   |-- HCALogo.jpg                 (firm logo — already in place)
+|   |-- favicon.ico                 (optional — add a favicon here)
+|
+|-- SiteStructure.txt               (this file)
+
+Notes
+-----
+1. Every page in /services references shared assets with a "../"
+   prefix (e.g. "../css/style.css", "../images/HCALogo.jpg") and links
+   back to the home page as "../index.html". index.html itself uses
+   plain paths ("css/style.css", "services/tax-filing.html"). Keep this
+   pattern if you add further pages.
+
+2. Optional further tidy-up: move css/, js/, and images/ into a single
+   assets/ folder (assets/css, assets/js, assets/images) and update the
+   <link>/<script>/<img> paths in every HTML file accordingly. Not
+   required — the current flat top-level folders work as-is.
+
+3. Third-party libraries (Bootstrap 5.3, Bootstrap Icons 1.11) load
+   from CDN in every page's <head>. No local vendor folder is needed
+   unless an offline-capable build is wanted later.
+
+4. Keep the floating WhatsApp button markup and the
+   ".hca-whatsapp-fab" CSS rule untouched when moving files — its
+   fixed bottom-right position rule depends on this class staying in
+   css/style.css.
+
+5. The contact form on index.html is currently hidden (class="d-none"
+   on the <form> tag) at the client's request. Remove that class when
+   ready to re-enable it — the mailto: action and validation are
+   already wired up.
