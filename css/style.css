@@ -194,7 +194,7 @@ a:hover { color: var(--hca-brass); }
   background-color: var(--hca-mist);
 }
 .hca-section-head {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
 }
 .hca-section-head .hca-kicker {
   color: var(--hca-brass);
