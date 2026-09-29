@@ -27,7 +27,9 @@ hari-cherumany-associates/
 |
 |-- images/
 |   |-- HCALogo.jpg                 (firm logo — already in place)
-|   |-- favicon.ico                 (optional — add a favicon here)
+|   |-- HCAFounder.jpg              (founder photo — Team section)
+|   |-- favicon.svg / favicon.ico   (HCA favicon)
+|   |-- favicon-32.png, apple-touch-icon.png
 |
 |-- SiteStructure.txt               (this file)
 
